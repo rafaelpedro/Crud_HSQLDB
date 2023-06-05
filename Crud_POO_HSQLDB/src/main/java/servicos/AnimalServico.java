@@ -30,7 +30,7 @@ public void excluir(long id) {
         em.getTransaction().commit();
     }
 }
-public void alterarComObjetoNaoGerenciado(Animal animal) {
+public void alterar(Animal animal) {
     try (var em = HibernateUtil.criarEntityManager()) {
         em.getTransaction().begin();
         em.merge(animal);

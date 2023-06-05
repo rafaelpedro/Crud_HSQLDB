@@ -63,6 +63,7 @@ public class App {
         animalServico.inserir(animal);
     }
 
+
     public static void listarTodos(){
         var animalServico = new AnimalServico();
         var listaDeAnimais= animalServico.listarTodos();
@@ -108,22 +109,41 @@ public class App {
                         System.out.println("Nome: [" + animalEncontrado.getNome() + "]");
                         var nome = ler.nextLine();
                         animalEncontrado.setNome(nome);
-                        animalServico.alterarComObjetoNaoGerenciado(animalEncontrado);
                     }
                     case 2 -> {
                         System.out.println("Especie: [" + animalEncontrado.getEspecie() + "]");
                         var especie = ler.nextLine();
                         animalEncontrado.setEspecie(especie);
-                        animalServico.alterarComObjetoNaoGerenciado(animalEncontrado);
                     }
                     case 3 -> {
                         System.out.println("Cor: [" + animalEncontrado.getCor() + "]");
                         var cor = ler.nextLine();
                         animalEncontrado.setCor(cor);
-                        animalServico.alterarComObjetoNaoGerenciado(animalEncontrado);
                     }
-                    //Colocar o restante dos Cases
+                    case 4  -> {
+                        System.out.println("Temperamento: [" + animalEncontrado.getTemperamento() + "]");
+                        var temperamento = ler.nextLine();
+                        animalEncontrado.setTemperamento(temperamento);
+                    }
+                    case 5 -> {
+                        System.out.println("Nome do Responsável: [" + animalEncontrado.getNomeResponsavel() + "]");
+                        var nResponsavel = ler.nextLine();
+                        animalEncontrado.setNomeResponsavel(nResponsavel);
+                    }
+                    case 6 -> {
+                        System.out.println("CPF do Responsavel: [" + animalEncontrado.getCpfResponsavel() + "]");
+                        var cpf = ler.nextLine();
+                        animalEncontrado.setCpfResponsavel(cpf);
+                    }
+                    case 7 -> {
+                        System.out.println("Data de Nascimento: [" + animalEncontrado.getDataNascimento() + "]");
+                        String dataDeNascimentoDigitada = ler.nextLine();
+                        DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
+                        LocalDate dataNascimentoFormatada = LocalDate.parse(dataDeNascimentoDigitada, formato);
+                        animal.setDataNascimento(dataNascimentoFormatada);
+                    }
                 }
+                animalServico.alterar(animalEncontrado);
             }
         } else {
             System.out.println("Animal nao encontrado.");

@@ -69,13 +69,13 @@ public class App {
         var listaDeAnimais= animalServico.listarTodos();
 
         for(Animal animal : listaDeAnimais){
-            System.out.print(animal.getId() + "\t");
-            System.out.print(animal.getNome() + "\t");
-            System.out.print(animal.getEspecie() + "\t");
-            System.out.print(animal.getDataNascimento() + "\t");
-            System.out.print(animal.getCor() + "\t");
-            System.out.print(animal.getTemperamento() + "\t");
-            System.out.print(animal.getNomeResponsavel() + "\t");
+            System.out.print(animal.getId() + " |\t");
+            System.out.print(animal.getNome() + " |\t");
+            System.out.print(animal.getEspecie() + " |\t");
+            System.out.print(animal.getDataNascimento() + " |\t");
+            System.out.print(animal.getCor() + " |\t");
+            System.out.print(animal.getTemperamento() + " |\t");
+            System.out.print(animal.getNomeResponsavel() + " |\t");
             System.out.println(animal.getCpfResponsavel());
         }
     }
